@@ -1,0 +1,35 @@
+﻿<#+
+
+public class ParentTemplate : CSharpTemplate
+{
+    private string _className;
+
+    public ParentTemplate(string className)
+    {
+        _className = className;
+    }
+
+    public override string TransformText()
+    {
+#>
+/*
+ * Author:xiaocong_soft
+ * Blog:http://xcong.cnblogs.com
+ */
+using System;
+
+namespace Xc.Core.Tools
+{
+    /// <summary>
+    /// <#=_className #>帮助类
+    /// </summary>
+    public class <#=_className #>
+    {
+        
+    }
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+    }
+}
+#>
